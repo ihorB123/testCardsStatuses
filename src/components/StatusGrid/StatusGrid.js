@@ -5,7 +5,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import Select from 'react-select';
 import { ENGINEERING, MACHINE_DOWN, MAINTANCE, statusOptions } from "../../constants";
-import "./StatusGrid.scss"
+import "./StatusGrid.scss";
 
 const StatusGrid = () => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -51,11 +51,11 @@ const StatusGrid = () => {
                     <span className="status-grid__info-maintenance">{maintenanceTools} Maint.</span>
                 </div>
                 <div className="status-grid__controls">
-                    <button className="status-grid__button" onClick={toggleExpandAll} disabled={!expandAll}>
-                        <ExpandLessIcon />
-                    </button>
                     <button className="status-grid__button" onClick={toggleExpandAll} disabled={expandAll}>
                         <ExpandMoreIcon />
+                    </button>
+                    <button className="status-grid__button" onClick={toggleExpandAll} disabled={!expandAll}>
+                        <ExpandLessIcon />
                     </button>
                     <input
                         type="text"

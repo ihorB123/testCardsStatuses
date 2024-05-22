@@ -1,8 +1,8 @@
-import { useEffect, useState, useRef } from "react";
-import {DEFAULT_COLOR, statusColors} from "../../constants";
+import React, { useState, useEffect, useRef } from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import "./StatusCard.scss"
+import { DEFAULT_COLOR, statusColors } from "../../constants";
+import "./StatusCard.scss";
 
 const StatusCard = ({ status, title, description, isExpandedAll }) => {
     const [isExpanded, setIsExpanded] = useState(isExpandedAll);
@@ -19,8 +19,10 @@ const StatusCard = ({ status, title, description, isExpandedAll }) => {
     }, [description]);
 
     useEffect(() => {
-        setIsExpanded(isExpandedAll);
-    }, [isExpandedAll]);
+        if (isExpandable) {
+            setIsExpanded(isExpandedAll);
+        }
+    }, [isExpandedAll, isExpandable]);
 
     const toggleExpand = () => {
         if (isExpandable) {
