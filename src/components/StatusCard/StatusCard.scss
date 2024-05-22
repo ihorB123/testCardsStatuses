@@ -1,0 +1,42 @@
+.status-card {
+  border: 1px solid grey;
+  border-radius: 8px;
+  padding: 10px;
+  height: 77px;
+  width: 156px;
+  border-left-width: 10px;
+
+  &--expanded {
+    height: auto;
+  }
+
+  &__header {
+    display: flex;
+  }
+
+  &__title {
+    color: #0B375A;
+    font-weight: bold;
+  }
+
+  &__logo {
+    margin-left: auto;
+  }
+
+  &__status, &__description {
+    color: #0B375A;
+  }
+
+  &__description {
+    &--expanded {
+      white-space: normal;
+      height: auto;
+    }
+
+    &--truncated {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
